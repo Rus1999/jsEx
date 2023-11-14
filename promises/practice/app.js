@@ -38,9 +38,10 @@ const getRomanNumber = (number) => {
 
 const onSuccess = (value) => console.log(`Success: ${value}`);
 const onError   = (error) => console.log(`Error: ${error}`);
+const onFinally = () => console.log(`Finally`);
 
 getNumber()
   .then(getRomanNumber)
   .then(onSuccess)
-  .catch(onError)
-  .finally(); // global error handler
+  .catch(onError) // global error handler
+  .finally(onFinally); 
