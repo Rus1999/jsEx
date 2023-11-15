@@ -1,6 +1,6 @@
-const getNumber = () => {
+const getNumber = (n) => {
   return new Promise((resolve, reject) => {
-    resolve(6);
+    resolve(n);
     reject('We\'re close');
   })
 }
@@ -40,7 +40,7 @@ const onSuccess = (value) => console.log(`Success: ${value}`);
 const onError   = (error) => console.log(`Error: ${error}`);
 const onFinally = () => console.log(`Finally`);
 
-getNumber()
+getNumber(6)
   .then(getRomanNumber)
   .then(onSuccess)
   .catch(onError) // global error handler
